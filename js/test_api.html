@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><title>Test API BDG</title></head>
+<body>
+  <h1>Probando conexión a usuarios.json</h1>
+  <button onclick="probar()">Probar</button>
+  <pre id="resultado"></pre>
+
+  <script>
+    async function probar() {
+      const token = "TU_TOKEN";
+      const owner = "TU_USUARIO";
+      const repo = "basededatosbdg";
+      const file = "usuarios.json";
+      const url = `https://api.github.com/repos/${owner}/${repo}/contents/${file}`;
+      const resultado = document.getElementById("resultado");
+      try {
+        const res = await fetch(url, {
+          headers: { Authorization: `token ${token}`, Accept: "application/vnd.github.v3+json" }
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+        const data = await res.json();
+        const content = atob(data.content);
+        resultado.textContent = JSON.stringify(JSON.parse(content), null, 2);
+      } catch (err) {
+        resultado.textContent = "Error: " + err.message;
+      }
+    }
+  </script>
+</body>
+</html>
