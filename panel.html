@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDG - Panel de administración</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="js/config.js"></script>
+</head>
+<body>
+    <div class="login-container">
+        <img src="logo-bdg.png" alt="Logo BDG" class="logo">
+        <h1>Banda de Guerra</h1>
+        <h2>Universidad Marítima del Caribe</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" placeholder="INGM-..." required>
+            </div>
+            <div class="input-group">
+                <label for="contraseña">Contraseña</label>
+                <input type="password" id="contraseña" placeholder="••••••••" required>
+            </div>
+            <button type="submit">Ingresar</button>
+        </form>
+        <div id="mensaje"></div>
+    </div>
+    <script src="js/login.js"></script>
+</body>
+</html>
