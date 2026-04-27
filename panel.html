@@ -8,23 +8,51 @@
     <script src="js/config.js"></script>
 </head>
 <body>
-    <div class="login-container">
-        <img src="logo-bdg.png" alt="Logo BDG" class="logo">
-        <h1>Banda de Guerra</h1>
-        <h2>Universidad Marítima del Caribe</h2>
-        <form id="loginForm">
-            <div class="input-group">
-                <label for="usuario">Usuario</label>
-                <input type="text" id="usuario" placeholder="INGM-..." required>
-            </div>
-            <div class="input-group">
-                <label for="contraseña">Contraseña</label>
-                <input type="password" id="contraseña" placeholder="••••••••" required>
-            </div>
-            <button type="submit">Ingresar</button>
-        </form>
-        <div id="mensaje"></div>
-    </div>
-    <script src="js/login.js"></script>
+    <!-- En el <head> -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<!-- Contenedor de login (oculto cuando hay sesión) -->
+<div id="login-screen">
+    <form id="login-form">
+        <input id="usuario" type="text" placeholder="Usuario" required>
+        <input id="contraseña" type="password" placeholder="Contraseña" required>
+        <button type="submit">Ingresar</button>
+    </form>
+</div>
+
+<!-- Dashboard (visible solo con sesión activa) -->
+<div id="dashboard-screen" style="display:none">
+    <h1>Panel de Control</h1>
+    <p>Bienvenido <span id="welcome-user"></span> (<span id="welcome-role"></span>)</p>
+    <button id="btn-guardar" class="btn-guardar" disabled>Guardar Cambios</button>
+    <div id="cooldown-timer" style="display:none"></div>
+    
+    <!-- Ejemplos de elementos con control de roles -->
+    <div class="role-based" data-role="admin-tools">Herramientas de administrador</div>
+    <div class="role-based" data-role="reportes">Reportes</div>
+    <div class="role-based" data-role="horarios">Horarios</div>
+    
+    <button onclick="logout()">Cerrar Sesión</button>
+</div>
+
+<!-- Incluir el script auth.js (debe estar ofuscado en producción) -->
+<script src="auth.js"></script>
+<script>
+    // Al cargar la página
+    document.addEventListener("DOMContentLoaded", () => {
+        const session = loadSession(); // función global definida en auth.js
+        if (session) {
+            // Ya hay sesión, ocultar login y mostrar dashboard
+            document.getElementById("login-screen").style.display = "none";
+            document.getElementById("dashboard-screen").style.display = "block";
+            initProtectedPage();
+        } else {
+            // Mostrar solo login
+            document.getElementById("login-screen").style.display = "block";
+            document.getElementById("login-form").addEventListener("submit", handleLogin);
+        }
+    });
+</script>
 </body>
 </html>
