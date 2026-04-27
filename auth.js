@@ -10,8 +10,8 @@
 // ---------- CONFIGURACIÓN ----------
 const CONFIG = {
     // Datos del repositorio privado donde está usuarios.json
-    GITHUB_OWNER: "TU_USUARIO_GH",
-    GITHUB_REPO: "repositorio-privado",
+    GITHUB_OWNER: "bdgumc",
+    GITHUB_REPO: "bdgumc.github.io",
     FILE_PATH: "usuarios.json",
     // Token de acceso personal (con permisos repo, solo lectura/escritura necesarios)
     GITHUB_TOKEN: "ghp_tuTokenPersonalAqui", // ⚠️ REEMPLAZAR por PAT real
