@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banda de Guerra - UMC</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horarios - Banda de Guerra</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- SweetAlert2 (por si se necesita) -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    <script src="auth.js"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", initProtectedPage);
-</script>
+  <header class="dashboard-header">
+    <div class="brand">
+      <h1>Módulo de Horarios</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="panel.html">Volver al Panel</a></li>
+        <li><a href="#" id="logout-btn">Cerrar Sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="dashboard-main">
+    <h2>Gestión de Horarios</h2>
+    <p>Funcionalidad en construcción.</p>
+  </main>
 
+  <!-- Guardián de sesión (verifica y controla inactividad) -->
+  <script src="js/auth-guard.js"></script>
 </body>
 </html>
