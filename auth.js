@@ -14,7 +14,7 @@ const CONFIG = {
     GITHUB_REPO: "bdgumc.github.io",
     FILE_PATH: "usuarios.json",
     // Token de acceso personal (con permisos repo, solo lectura/escritura necesarios)
-    GITHUB_TOKEN: "ghp_tuTokenPersonalAqui", // ⚠️ REEMPLAZAR por PAT real
+    GITHUB_TOKEN: "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", // ⚠️ REEMPLAZAR por PAT real
 
     // Tiempos en milisegundos
     INACTIVITY_TIMEOUT: 20 * 60 * 1000,      // 20 minutos
