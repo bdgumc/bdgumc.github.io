@@ -4,9 +4,9 @@
 // el servidor o mediante un build (ej. Vite con env).
 // NUNCA subir el token a repositorios públicos.
 // ==============================================
-const GITHUB_TOKEN = 'TU_TOKEN';          // <-- REEMPLAZAR CON TU TOKEN
-const GITHUB_OWNER = 'TU_USUARIO_GITHUB'; // <-- REEMPLAZAR
-const GITHUB_REPO = 'TU_REPO';            // <-- REEMPLAZAR
+const GITHUB_TOKEN = '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';          // <-- REEMPLAZAR CON TU TOKEN
+const GITHUB_OWNER = 'bdgumc'; // <-- REEMPLAZAR
+const GITHUB_REPO = 'bdgumc.github.io';            // <-- REEMPLAZAR
 const JSON_PATH = 'usuarios.json';        // Ruta dentro del repo
 
 // Función para obtener usuarios.json desde la API de GitHub
