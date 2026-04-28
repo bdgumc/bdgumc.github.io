@@ -1,0 +1,166 @@
+/* ==============================================
+   ESTILOS INSTITUCIONALES BDG - UMC
+   Paleta: azul marino profundo, blanco, dorado.
+   ============================================== */
+
+/* Google Fonts para tipografía limpia y moderna */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #0A1A2F 0%, #0D1F38 50%, #122A44 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* --- Loader / Spinner --- */
+.loader-overlay {
+  display: none; /* Oculto por defecto, se muestra con JS */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 26, 47, 0.85);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+}
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(212, 175, 55, 0.2);
+  border-top-color: #D4AF37;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* --- Contenedor principal --- */
+.login-container {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+}
+
+.login-card {
+  background: #132A45;
+  border-radius: 16px;
+  border-top: 4px solid #D4AF37;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  padding: 40px 30px;
+  text-align: center;
+}
+
+/* --- Logo y títulos --- */
+.logo {
+  margin-bottom: 30px;
+}
+.logo h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #D4AF37;
+  margin: 10px 0 5px;
+}
+.logo h2 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #B0C4DE;
+  letter-spacing: 0.5px;
+}
+
+/* --- Grupo de inputs --- */
+.input-group {
+  position: relative;
+  margin-bottom: 25px;
+  text-align: left;
+}
+.input-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #B0C4DE;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+.input-group input {
+  width: 100%;
+  padding: 12px 15px;
+  background: #1E3A5F;
+  border: 2px solid #2C4A6E;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #fff;
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+.input-group input:focus {
+  border-color: #D4AF37;
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+}
+/* Borde animado inferior (pseudo-elemento) */
+.focus-border {
+  display: none; /* No lo usamos, pero se podría animar */
+}
+/* Validación visual: borde rojo si está marcado como inválido */
+.input-group input.invalid {
+  border-color: #E74C3C;
+}
+/* Borde verde cuando tiene contenido (clase .filled añadida por JS) */
+.input-group input.filled {
+  border-color: #27AE60;
+}
+
+/* --- Botón de inicio de sesión --- */
+.btn-login {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  background: linear-gradient(135deg, #D4AF37, #B8960F);
+  color: #0A1A2F;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+  text-transform: uppercase;
+}
+.btn-login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+}
+.btn-login:active {
+  transform: translateY(0);
+}
+
+/* Texto institucional inferior */
+.institucional-text {
+  margin-top: 25px;
+  font-size: 0.75rem;
+  color: #7A8BA0;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 30px 20px;
+  }
+  .logo h1 {
+    font-size: 1.6rem;
+  }
+}
